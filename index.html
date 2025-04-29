@@ -2,120 +2,316 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Patch-IT - Аутсорсинг IT-поддержки</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Комплексный IT-аутсорсинг: серверное администрирование, поддержка серверов 1С, сервисная поддержка и сетевые решения в Ташкенте.">
+    <meta name="keywords"
+        content="IT-аутсорсинг, серверное администрирование, настройка серверов 1С, системное администрирование, сервисная поддержка, сетевые решения">
+    <title>Patch-IT – IT поддержка в Ташкенте</title>
+    <meta property="og:title" content="IT-аутсорсинг в Ташкенте – Patch-IT">
+    <meta property="og:description"
+        content="Комплексное серверное и системное администрирование, сервисная поддержка и сетевые решения для вашего бизнеса.">
+    <meta property="og:url" content="https://patch-it.uz">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://patch-it.uz/assets/img/logo.png">
+    <link rel="shortcut icon" href="assets/img/faviconn.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script>// Предварительный просмотр темы
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                let theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+                document.documentElement.setAttribute('data-theme', theme);
+                // Можно также заранее установить aria-label на кнопку, если хочешь
+                document.getElementById('theme-toggle')?.setAttribute('aria-label', theme);
+            } catch (e) {
+                console.error('Theme detection error', e);
+            }
+        })();
+        // моментально применяем тему без визуального мигания
+        (function () {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme) {
+                    document.documentElement.setAttribute('data-theme', theme);
+                }
+            } catch (e) {
+                console.error('Theme load error', e);
+            }
+        })();</script>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <h1>Patch-IT</h1>
-      <p>Аутсорсинг IT-поддержки для вашего бизнеса</p>
-      <nav class="nav">
-        <ul>
-          <li><a href="#about">О компании</a></li>
-          <li><a href="#service">Услуги</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
+    <div class="load" id="load">
+        <div class="logo-content"><img src="assets/img/logo.png" alt="Patch IT logo" class="load-pic">
+            <div class="logo-text">
+                <h1 class="logo-name">Patch-IT</h1><span class="logo-subtitle">Сервис IT поддержки</span>
+            </div>
+        </div>
+        <div class="loader-line"></div>
     </div>
-  </header>
-
-  <main class="main">
-    <div class="container">
-
-      <!-- about -->
-      <section class="about" id="about">
-        <div class="about-us">
-          <h2>О компании Patch-IT</h2>
-          <p>
-            <strong>Наша миссия</strong> – сделать IT-поддержку доступной и
-            эффективной для компаний любого размера. Мы стремимся
-            освободить наших клиентов от забот, связанных с
-            IT-инфраструктурой, чтобы они могли сосредоточиться
-            на развитии своего бизнеса.
-          </p>
-
-
-
-          <h2>Наши преимущества</h2>
-
-          <ul>
-            <li>Опытная команда IT-специалистов</li>
-            <li>Индивидуальный подход к каждому клиенту</li>
-            <li>Оперативное решение проблем</li>
-            <li>Прозрачные цены</li>
-            <li>Гибкие условия сотрудничества</li>
-          </ul>
+    <header class="navbar">
+        <div class="container"><a href="#" class="logo"><img src="assets/img/logo.png" alt="Patch IT logo"
+                    class="header-logo">
+                <div class="logo-text">
+                    <h1 class="logo-name">Patch-IT</h1><span class="logo-subtitle">Сервис IT поддержки</span>
+                </div>
+            </a>
+            <nav class="nav-links"><a href="#about">О нас</a><a href="#services">Услуги</a><a
+                    href="#partners">Партнёры</a><a href="#contact">Контакты</a></nav><button class="theme-toggle"
+                id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite"><svg
+                    class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <mask class="moon" id="moon-mask">
+                        <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                        <circle cx="24" cy="10" r="6" fill="black" />
+                    </mask>
+                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                    <g class="sun-beams" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </g>
+                </svg></button>
         </div>
-      </section>
-
-      <!-- service -->
-      <section class="service" id="service">
-        <h2>Наши услуги</h2>
-        <div class="service-detail">
-          <h3>Серверное администрирование</h3>
-          <p>Обеспечиваем бесперебойную работу ваших серверов, включая:</p>
-          <ul>
-            <li>Установку и настройку серверного оборудования и программного обеспечения</li>
-            <li>Мониторинг и оптимизацию производительности</li>
-            <li>Резервное копирование и восстановление данных</li>
-            <li>Обеспечение безопасности</li>
-          </ul>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>IT-Поддержка, для вашего бинеса</h2>
+                <p>Профессиональные ИТ-услуги, адаптированные к потребностям вашего бизнеса. Доступны круглосуточно и
+                    без выходных.</p><a href="#contact" class="btn-secondary">Связаться</a>
+            </div>
+            <div class="hero-visual"><svg viewBox="0 0 80 80">
+                    <rect x="10" y="10" width="60" height="20" rx="4" fill="#FFFFFF" />
+                    <circle cx="60" cy="20" r="3" fill="#2F3749" />
+                    <rect x="10" y="45" width="60" height="20" rx="4" fill="#FFFFFF" />
+                    <circle cx="60" cy="55" r="3">
+                </svg></div>
         </div>
-        <div class="service-detail">
-          <h3>Системное администрирование</h3>
-          <p>Поддерживаем работоспособность ваших компьютеров и сети:</p>
-          <ul>
-            <li>Установка и настройка операционных систем и программного обеспечения</li>
-            <li>Управление пользователями и правами доступа</li>
-            <li>Устранение неполадок</li>
-            <li>Обеспечение безопасности</li>
-          </ul>
+    </section>
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2>О Нас</h2>
+            <div class="about-cards">
+                <div class="about-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#cheap"></use>
+                    </svg>
+                    <h3>Надежные решения</h3>
+                    <p>Обеспечение безопасности инфраструктуры вашего бизнеса на уровне предприятия.</p>
+                </div>
+                <div class="about-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#headset_mic"></use>
+                    </svg>
+                    <h3>Поддержка в режиме 24/7</h3>
+                    <p>Опытная команда IT-специалистов с круглосуточной технической поддержка в любое время, когда вам
+                        это необходимо.</p>
+                </div>
+                <div class="about-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#settings"></use>
+                    </svg>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Индивидуальные ИТ-решения для ваших конкретных нужд.</p>
+                </div>
+            </div>
         </div>
-        <div class="service-detail">
-          <h3>Сервисная поддержка</h3>
-          <p>Осуществляем ремонт и обслуживание компьютерной техники:</p>
-          <ul>
-            <li>Диагностика и устранение неисправностей</li>
-            <li>Замена комплектующих</li>
-            <li>Установка программного обеспечения</li>
-            <li>Настройка периферийных устройств</li>
-          </ul>
+    </section>
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2>Наши Услуги</h2>
+            <div class="services-cards">
+                <div class="service-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#storage"></use>
+                    </svg>
+                    <h3>Серверное администрирование</h3>
+                    <p>Обеспечиваем бесперебойную и стабильную работу ваших серверов.</p>
+                </div>
+                <div class="service-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#security"></use>
+                    </svg>
+                    <h3>Системное администрирование</h3>
+                    <p>Поддерживаем работоспособность ваших компьютеров и девайсов.</p>
+                </div>
+                <div class="service-card"><svg class="icon">
+                        <use xlink:href="assets/img/icons/sprite.svg#device_hub"></use>
+                    </svg>
+                    <h3>Сетевые решения</h3>
+                    <p>Обеспечение оптимальной настройки сетевой инфраструктуры для повышения эффективности и
+                        безопасноти работы.</p>
+                </div>
+            </div>
         </div>
-
-
-      </section>
-
-      <!-- contacts -->
-      <section class="contacts" id="contacts">
-        <h2>Контакты</h2>
-        <p>
-          Свяжитесь с нами, чтобы обсудить ваши потребности в
-          IT-поддержке и получить бесплатную консультацию.
-        </p>
-        <div class="contacts-info">
-          <strong>Телефон: <a href="tel:+998999999999">+998 (99) 999-99-99</a>
-            <br>
-            Email: <a href="mailto:info@patch-it.com">info@patch-it.com</a></strong>
+    </section>
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2>Наши Партнёры</h2>
+            <div class="partners-slider swiper-container">
+                <div class="swiper-wrapper slider-track">
+                    <div class="swiper-slide slide">
+                        <picture class="partner-logo aion">
+                            <source srcset="assets/img/aionbeverages.webp" type="image/webp"><img
+                                src="assets/img/aionbeverages.png" alt="aion beverages" loading="lazy" width="100%"
+                                height="100%" class="partner-image">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide slide">
+                        <picture class="partner-logo">
+                            <source srcset="assets/img/legion.webp" type="image/webp"><img src="assets/img/legion.png"
+                                alt="aion beverages" loading="lazy" width="100%" height="100%" class="partner-image">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide slide">
+                        <picture class="partner-logo">
+                            <source srcset="assets/img/bloom.webp" type="image/webp"><img src="assets/img/bloom.png"
+                                alt="aion beverages" loading="lazy" width="100%" height="100%" class="partner-image">
+                        </picture>
+                    </div>
+                    <div class="swiper-slide slide">
+                        <picture class="partner-logo">
+                            <source srcset="assets/img/stargroup.webp" type="image/webp"><img
+                                src="assets/img/stargroup.png" alt="aion beverages" loading="lazy" width="100%"
+                                height="100%" class="partner-image">
+                        </picture>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>Patch-IT – ваш надежный партнер в сфере IT-поддержки</p>
-      <p>© <a title="Cyberpunk">2077</a> Patch-IT</p>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
+    </section>
+    <section class="faq-section" id="faq">
+        <div class="container faq__container">
+            <h2 class="faq__page-title">Часто задаваемые вопросы</h2>
+            <ul class="faq__questions js-accordion">
+                <li class="faq__question">
+                    <h3 class="faq__heading">Какие направления работ включает серверное администрирование?<span
+                            class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Установка и конфигурация серверного оборудования и ОС, круглосуточный мониторинг
+                            производительности, регулярное резервное копирование, восстановление данных и меры по
+                            обеспечению информационной безопасности.</p>
+                    </div>
+                </li>
+                <li class="faq__question">
+                    <h3 class="faq__heading">Что входит в сервисную поддержку рабочих станций?<span
+                            class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Диагностика аппаратного и программного уровня, замена комплектующих, установка
+                            ПО, настройка периферии и сопровождение пользователей.</p>
+                    </div>
+                </li>
+                <li class="faq__question">
+                    <h3 class="faq__heading">Как осуществляется устранение неисправностей?<span
+                            class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Наши инженеры оперативно проводят диагностику и устраняют неисправности
+                            дистанционно или на месте у заказчика с последующими рекомендациями по предупреждению
+                            аналогичных проблем.</p>
+                    </div>
+                </li>
+                <li class="faq__question">
+                    <h3 class="faq__heading">Осуществляете ли вы установку и настройку серверов 1С?<span
+                            class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Да, наши специалисты выполняют установку и настройку серверов 1С, включая
+                            настройку баз данных, резервное копирование и обеспечение стабильной работы системы
+                            1С:Предприятие.</p>
+                    </div>
+                </li>
+                <li class="faq__question">
+                    <h3 class="faq__heading">Какие сетевые решения вы предлагаете?<span class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Мы проектируем, настраиваем и обслуживаем корпоративные сети любого уровня
+                            сложности, включая монтаж структурированных кабельных систем (СКС), настройку сетевого
+                            оборудования, организацию Wi-Fi покрытий, VPN-каналов и обеспечение сетевой безопасности..
+                        </p>
+                    </div>
+                </li>
+                <li class="faq__question">
+                    <h3 class="faq__heading">Как формируется стоимость услуг?<span class="head-icon"></span></h3>
+                    <div class="content">
+                        <p class="text">Стоимость услуг рассчитывается индивидуально и зависит от объёма и сложности
+                            задач, количества обслуживаемой техники и условий соглашения об уровне сервиса (SLA).</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <h2>Наши Контакты</h2>
+            <form id="contact-form" class="contact-form"><label for="name">Имя</label><input type="text" id="name"
+                    name="from_name" placeholder="Ваше Имя" required><label for="email">E-mail</label><input
+                    type="email" id="email" name="user_email" placeholder="Ваша электронная почта" required><label
+                    for="phone">Телефон</label><input type="tel" id="phone" name="user_phone"
+                    placeholder="Ваш номер телефона" required><label for="message">Сообщение</label><textarea
+                    id="message" name="message" placeholder="Напишите нам о своих подребностях или вопросах" rows="4"
+                    required></textarea><button id="button" type="submit">Отправить</button></form>
+            <div class="contact-info-card" id="contact">
+                <h3>Мы здесь</h3>
+                <div class="map-placeholder"><iframe
+                        src="https://maps.google.com/maps?q=41.296316,69.287718&z=15&t=m&output=embed"
+                        style="border:0;width:100%;height:100%" allowfullscreen loading="lazy"></iframe></div>
+                <div class="contact-details">
+                    <div><svg class="icon">
+                            <use xlink:href="assets/img/icons/sprite.svg#phone"></use>
+                        </svg><a href="tel:+998993462888">+998 (99) 346-2888</a></div>
+                    <div><svg class="icon">
+                            <use xlink:href="assets/img/icons/sprite.svg#mail"></use>
+                        </svg><a href="mailto:nfo@patch-it.uz">info@patch-it.uz</a></div>
+                    <div><svg class="icon">
+                            <use xlink:href="assets/img/icons/sprite.svg#location"></use>
+                        </svg><a href="https://yandex.uz/maps/-/CHfLJV8A">г. Ташкент, Мирабадский район, ул. Нукус,
+                            1&nbsp;проезд, дом 4</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <h3>Patch-IT</h3>
+                <p>Профессиональные ИТ-услуги для современного бизнеса.</p>
+            </div>
+            <div class="footer-right">
+                <p>© 2025 Patch-IT. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <nav class="bottom-nav"><a href="#about"><svg class="icon">
+                <use xlink:href="assets/img/icons/sprite.svg#menu_book"></use>
+            </svg>
+            <p>О Нас</p>
+        </a><a href="#services"><svg class="icon">
+                <use xlink:href="assets/img/icons/sprite.svg#device_hub"></use>
+            </svg>
+            <p>Услуги</p>
+        </a><a href="#partners"><svg class="icon">
+                <use xlink:href="assets/img/icons/sprite.svg#handshake"></use>
+            </svg>
+            <p>Партнёры</p>
+        </a><a href="#contact"><svg class="icon">
+                <use xlink:href="assets/img/icons/sprite.svg#chat"></use>
+            </svg>
+            <p>Контакты</p>
+        </a></nav>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+        integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init("kJMlwl7LiEf95b1Fi")</script>
+    <script src="https://cdn.jsdelivr.net/npm/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
